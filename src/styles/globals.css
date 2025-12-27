@@ -52,6 +52,23 @@ body {
   color: var(--text-color);
   }
 
+/* Global safety rules to prevent horizontal overflow on small screens */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  /* hide any accidental horizontal overflow while keeping vertical scroll */
+  overflow-x: hidden;
+}
+
+/* Make media responsive so it cannot cause horizontal scrolling */
+img, picture, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
